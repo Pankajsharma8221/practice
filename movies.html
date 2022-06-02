@@ -5,9 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #movies{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: auto;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        #movies>div>img{
+            height: 300px;
+            width: 100%;
+            
+        }
+
+    </style>
 </head>
 <body>
-    
+    <div id="navbar">
+        <h3>MOVIE List</h3>
+        <h3 id="wallet">0</h3>
+           </div>
+
+           <div>
+            <input type="text" oninput="deBouncing(main,2000)" id="search" placeholder="Search Movies" >
+        </div>
+
+        <div id="movies"></div>
 </body>
 </html>
-<script src="movies.js"></script>
+<script src="./movies.js"></script>
