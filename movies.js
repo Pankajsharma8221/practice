@@ -53,25 +53,21 @@ function append(data){
       let m_title = document.createElement("h3");
          m_title.innerText=el.Title
       let book = document.createElement("button");
-     let dataadd ={
-         m_title,
-         m_img,
-             }
+      let dataadd ={
+        title: el.Title,
+        poster: el.Poster,
+        year : el.Year,
+            }
 
        book.setAttribute("class","book_now")
        book.innerText="Book now";
-       book.onclick=function(dataadd){
-           localStorage.setItem("movie",dataadd)
+       book.onclick=function(){
+        localStorage.setItem("movie", JSON.stringify(dataadd))
+        // local_movie(dataadd)  
        }
 m_div.append(m_img,m_title,book)
 movies.append(m_div)
-
-      
-
     })
-   
-
-
 
 }
 let id;
@@ -85,3 +81,19 @@ if(id){
     },delay)
 }
 
+addMoney();
+function addMoney(){
+  let addMoney=localStorage.getItem("amount")
+  console.log(addMoney)
+  let h3=document.getElementById("wallet")
+  h3.innerText=addMoney;
+  // window.location.reload();
+//   document.getElementById("amount").innerHTML=null
+}
+
+
+// function local_movie(dataadd){
+  
+    
+
+// }
