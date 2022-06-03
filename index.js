@@ -12,7 +12,17 @@ function addMoney(){
   let addMoney=localStorage.getItem("amount")
   console.log(addMoney)
   let h3=document.getElementById("wallet")
-  h3.innerText=addMoney;
+ 
+
+  if(addMoney==null)
+  {
+    h3.innerText=0;
+  }else{
+     h3.innerText=addMoney;
+  }
+
+
+
   // window.location.reload();
   document.getElementById("amount").innerHTML=null
 }

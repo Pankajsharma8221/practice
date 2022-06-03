@@ -52,20 +52,25 @@ function append(data){
 
       let m_title = document.createElement("h3");
          m_title.innerText=el.Title
+        let book_a= document.createElement("a");
+        book_a.setAttribute("href","checkout.html")
       let book = document.createElement("button");
       let dataadd ={
         title: el.Title,
         poster: el.Poster,
         year : el.Year,
             }
-
+        
        book.setAttribute("class","book_now")
        book.innerText="Book now";
+
        book.onclick=function(){
         localStorage.setItem("movie", JSON.stringify(dataadd))
         // local_movie(dataadd)  
        }
-m_div.append(m_img,m_title,book)
+       book_a.append(book)
+
+m_div.append(m_img,m_title,book_a)
 movies.append(m_div)
     })
 
